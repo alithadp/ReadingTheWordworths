@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Julius+Sans+One' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Oxygen:300' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="messi.css" />
+	<script src="messi.js"></script>
+	<script>
+
+	//mouseHilite: function for hilighting a category of words, with specified colors
+	//inputs: array of class names (categories); array of colors
+	var mouseHilite = function(classname, color, note){
+		for (var i = 0; i < classname.length; i = i+1) {
+			$("."+classname[i]).css('border', '2px dashed '+color[i]);
+			$("."+classname[i]).mouseover(function(){
+				for (var j = 0; j < classname.length; j = j+1) {
+					$("."+classname[j]).css('background-color', color[j]);
+				}
+			});
+			$("."+classname[i]).mouseout(function() {
+				for (var x = 0; x < classname.length; x = x+1) {
+					$("."+classname[x]).css('background-color', "transparent");
+				}
+			});
+			$("."+classname[i]).click(function() {
+				var replaced = $(".notes").html().replace($(".notes").html(), note);
+				$(".notes").html(replaced);
+			});
+		}
+	}
+
+	var specHilite = function(specs, classname, scolor, ccolor, bcolor, note) {
+		for (var i = 0; i < specs.length; i = i + 1) {
+			$("."+specs[i]).css('border', '2px dashed '+bcolor[i]);
+			$("."+specs[i]).mouseover(function(){
+				$("."+classname).css('background-color', ccolor);
+			});
+			$("."+specs[i]).mouseover(function(){
+				for (var j = 0; j < specs.length; j = j + 1) {
+					$("."+specs[j]).css('background-color', scolor[j]);
+				}
+			});
+			$("."+specs[i]).mouseout(function(){
+				$("."+classname).css('background-color', "transparent");
+			});
+			$("."+specs[i]).mouseout(function(){
+				for (var x = 0; x < specs.length; x = x + 1) {
+					$("."+specs[x]).css('background-color', "transparent");
+				}
+			});
+			$("."+specs[i]).click(function() {
+				var replaced = $(".notes").html().replace($(".notes").html(), note);
+				$(".notes").html(replaced);
+			});
+		}
+	}
+
+	var restHilite = function() {
+		$(".rest").css('border', '2px dashed #DEBDFF');
+		$(".rest1").css("border", "2px dashed #D6D6D6");
+		$(".rest2").css("border", "2px dashed #FFA6C9")
+		$(".rest").mouseover(function() {
+			$(".rest").css("background-color", "#F1E3FF");
+			$(".rest1").css("background-color", "#EBEBEB");
+			$(".rest2").css("background-color", "#FFE0F0");
+			$(".restW").css("background-color", "#EBEBEB");
+		});
+		$(".rest").mouseout(function() {
+			$(".rest").css("background-color", "transparent");
+			$(".rest1").css("background-color", "transparent");
+			$(".restW").css("background-color", "transparent");
+			$(".rest2").css("background-color", "transparent");
+		});
+		$(".rest1").mouseover(function() {
+			$(".rest").css("background-color", "#F1E3FF");
+			$(".rest1").css("background-color", "#EBEBEB");
+			$(".restW").css("background-color", "#EBEBEB");
+			$(".rest2").css("background-color", "#FFE0F0");
+		});
+		$(".rest1").mouseout(function() {
+			$(".rest").css("background-color", "transparent");
+			$(".rest1").css("background-color", "transparent");
+			$(".restW").css("background-color", "transparent");
+			$(".rest2").css("background-color", "transparent");
+		});
+		$(".rest2").mouseover(function() {
+			$(".rest").css("background-color", "#F1E3FF");
+			$(".rest1").css("background-color", "#EBEBEB");
+			$(".restW").css("background-color", "#EBEBEB");
+			$(".rest2").css("background-color", "#FFE0F0");
+		});
+		$(".rest2").mouseout(function() {
+			$(".rest").css("background-color", "transparent");
+			$(".rest1").css("background-color", "transparent");
+			$(".restW").css("background-color", "transparent");
+			$(".rest2").css("background-color", "transparent");
+		});
+		var notes = "In Dorothy's journal, she and William find rest in nature--like the daffodils that \"rested their heads upon [...] stones as on a pillow for weariness\" (ll. 10-11), she and William \"rested again and again\" (l. 19).  The parallel use of \"rested\" in relation to the daffodils and the \"we\" sets up a relationship between Dorothy and William and the daffodils.  Dorothy separates the daffodils into two categories: those that are \"rest[ing]\" (l. 10) and the \"rest\" (l. 11).  The play on the verb \"rested\" (l. 10) and the noun \"rest\" (l. 11) reinforces the link between resting in nature and then feeling rejuvenated.  Because Dorothy and William and the daffodils are linked together through the act of \"rest[ing],\" Dorothy and William become a part of the natural scene.  Thus, the rejuvenation that nature provides for the daffodils is also available to Dorothy and William.</p><p>In \"I Wandered Lonely as a Cloud,\" though, William does not recognize the \"wealth the show to him had brough\" (l. 18) until he has left nature, and is \"on [his] couch\" (l. 19), presumably trying to rest.  Therefore, unlike Dorothy, who sees an inclusive nature, William sees man and nature as separate entities: even when man is <i>in</i> nature, he is apart from it, failing to realize the \"wealth\" that nature offers.  This separation that William enforces can perhaps be explained in terms of William's vision for his poetry.  In the Preface, he writes that \"to endeavor to produce or enlarge this capability [of being find intellectual pleasure with finer, subtler stimuli] is one of the best services in which, at any period, a writer can be engaged,\" one that he himself has taken up.<sup class=\"7\">7</sup> Telling his readers that they can find pleasure by \"rest[ing]\" in nature as Dorothy suggests, then, would actually undermine William's argument in the Preface and make what William offers with his poetry--a way to \"enlarge\"<sup class=\"7\">7</sup> the mind's ability to find pleasure--available without his poetry's mediation.</p>";
+		$(".rest1").click(function() {
+			var replaced = $(".notes").html().replace($(".notes").html(), notes);
+			$(".notes").html(replaced);
+		});
+		$(".rest2").click(function() {
+			var replaced = $(".notes").html().replace($(".notes").html(), notes);
+			$(".notes").html(replaced);
+		});
+		$(".rest").click(function() {
+			var replaced = $(".notes").html().replace($(".notes").html(), notes);
+			$(".notes").html(replaced);
+		});
+	}
+
+	var IHilite = function() {
+		$(".firstI").css('border', '2px dashed #E68080');
+		$(".we1").css('border', '2px dashed #9BD7AF');
+		$(".we").css('border', '2px dashed transparent');
+		$(".my1").css('border', '2px dashed transparent');
+		$(".I1").css('border', '2px dashed transparent');
+		$(".firstI").mouseover(function() {
+			$(".I").css("background-color", "#FFCECE");
+			$(".I1").css("background-color", "#FFCECE");
+			$(".my1").css("background-color", "#FFCECE");
+			$(".firstI").css("background-color", "#FFCECE");
+			$(".my").css("background-color", "#FFCECE");
+			$(".we").css("background-color", "#E0FFE0");
+			$(".we1").css("background-color", "#E0FFE0");
+			$(".we").css('border-color', '#9BD7AF');
+			$(".my1").css('border-color', '#E68080');
+			$(".I1").css('border-color', '#E68080');
+		});
+		$(".firstI").mouseout(function() {
+			$(".I").css("background-color", "transparent");
+			$(".firstI").css("background-color", "transparent");
+			$(".my").css("background-color", "transparent");
+			$(".I1").css("background-color", "transparent");
+			$(".my1").css("background-color", "transparent");
+			$(".we").css("background-color", "transparent");
+			$(".we1").css("background-color", "transparent");
+			$(".we").css('border-color', 'transparent');
+			$(".I1").css('border-color', 'transparent');
+			$(".my1").css('border-color', 'transparent');
+		});
+		$(".we1").mouseover(function() {
+			$(".I").css("background-color", "#FFCECE");
+			$(".firstI").css("background-color", "#FFCECE");
+			$(".my").css("background-color", "#FFCECE");
+			$(".I1").css("background-color", "#FFCECE");
+			$(".my1").css("background-color", "#FFCECE");
+			$(".we").css("background-color", "#E0FFE0");
+			$(".we1").css("background-color", "#E0FFE0");
+			$(".we").css('border-color', '#9BD7AF');
+			$(".my1").css('border-color', '#E68080');
+			$(".I1").css('border-color', '#E68080');
+		});
+		$(".we1").mouseout(function() {
+			$(".I").css("background-color", "transparent");
+			$(".firstI").css("background-color", "transparent");
+			$(".my").css("background-color", "transparent");
+			$(".I1").css("background-color", "transparent");
+			$(".my1").css("background-color", "transparent");
+			$(".we").css("background-color", "transparent");
+			$(".we1").css("background-color", "transparent");
+			$(".we").css('border-color', 'transparent');
+			$(".I1").css('border-color', 'transparent');
+			$(".my1").css('border-color', 'transparent');
+		});
+
+		var notes = "Margaret Homans, in <i>Women Writers and Poetic Identity</i>, points out that \"Dorothy's tendency to omit a central or prominent self in her journals becomes much more apparent when compared to William's habitual concentration on the self.\"<sup class=\"5\">5</sup>  Dorothy uses \"we\" six times in her journal entry, and uses \"I\" once; William, on the other hand, uses \"I\" five times, and \"we\" none.</p><p>As her May 14, 1800, journal entry suggests, Dorothy's removal of self from her journals may have to do with her resolve \"to write a journal of the time till W[illiam] & J[ohn, William's younger brother] return, & I set about keeping my resolve because I will not quarrel with myself, & because I shall give W[illia]m Pleasure by it when he comes home again.\"<sup class=\"3\">3</sup> Her two reasons, which are to not \"quarrel with [her]self\" and to \"give Wm Pleasure,\" both involve a form of self-denial that is evident from the excerpted April 15, 1802 entry.  Her single use of \"I\" in the journal is in the context of a phrase that denies the \"I\" she invokes: Dorothy says \"I never saw daffodils so beautiful.\"  Homans observes that, \"[w]riting out of love for nature, [Dorothy] merges with nature and forgets her self\"<sup class=\"5\">5</sup></p><p>For William, however, the \"I\" is essential.  As Susan Levin points out in <i>Dorothy Wordsworth and Romanticism</i>,  \"I Wandered lonely as a Cloud\" allows William to \"elaborate the concerns of the Preface to <i>Lyrical Ballads</i>\"<sup class=\"7\">7</sup> and offer a working example of his poetic process.  In the Preface, William argues that \"poetry is the spontaneous overflow of powerful [...] emotions recollected in tranquility.\"<sup class=\"7\">7</sup>  With the \"bliss of solitude\" (l. 22), then, comes the tranquility William needs for his heart \"to dance[...] with the daffodils\" (l. 24).</p>";
+
+		$(".firstI").click(function() {
+			var replaced = $(".notes").html().replace($(".notes").html(), notes);
+			$(".notes").html(replaced);
+		});
+		$(".we1").click(function() {
+			var replaced = $(".notes").html().replace($(".notes").html(), notes);
+			$(".notes").html(replaced);
+		});
+	}
+
+	var numHilite = function() {
+		$(".numbers").css('border', '2px dashed #FFCC99');
+
+		$(".numbers").mouseover(function() {
+			$(".numbers").css("background-color", "#FFE3C8");
+			$(".numbers1").css("background-color", "#FFE3C8");
+		});
+		$(".numbers").mouseout(function() {
+			$(".numbers").css("background-color", "transparent");
+			$(".numbers1").css("background-color", "transparent");
+		});
+
+		var note = "Dorothy's numerical descriptors are smaller in scale than William's, who, as Levin points out, \"embellishes the description\"<sup class=\"6\">6</sup> that Dorothy provides."
+
+		$(".numbers").click(function() {
+			var replaced = $(".notes").html().replace($(".notes").html(), note);
+			$(".notes").html(replaced);
+		});
+	}
+
+	var noHilite = function(classname) {
+		for (var i = 0; i < classname.length; i++) {
+			$("."+classname[i]).mouseover(function() {
+				$("."+classname[i]).css("background-color", "transparent");
+			});
+		}
+	}
+
+	$(document).ready(function(){
+		//buttons
+		$(".unclicked1").mouseover(function() {
+			$(".unclicked1").css("background-color", "#D4BFA9");
+			$(".unclicked1").css("color", "#FFFFF5");
+		});
+		$(".unclicked1").mouseout(function() {
+			$(".unclicked1").css("background-color", "#FFFFF5");
+			$(".unclicked1").css("color", "#000000");
+		});
+		$(".unclicked2").mouseover(function() {
+			$(".unclicked2").css("background-color", "#D4BFA9");
+			$(".unclicked2").css("color", "#FFFFF5");
+		});
+		$(".unclicked2").mouseout(function() {
+			$(".unclicked2").css("background-color", "#FFFFF5");
+			$(".unclicked2").css("color", "#000000");
+		});
+		//daffodils
+		mouseHilite(["daffodils"], ["#FFE0F0"], "<img src=\"daffodil.jpg\" align=\"center\" style=\"width:290px\"><br><br>The daffodils that Dorothy and William saw were likely <i>Narcissus pseudonarcissus</i>, which are \"native to the Lake District.\"<sup class='10'>10</sup>");
+		$(".daffodils").css('border-color', '#FFA6C9');
+		//conjunctions
+		mouseHilite(["conj"], ["#DAFFF3"], "Dorothy's use of \"and\" gives her descriptions a sense of continuity and movement; she constructs long sentences that, like her description of nature, lead us to \"more and yet more\" images (l. 5).  Dorothy's sentences work not only to distinguish her journals from William's poetry, but also, perhaps, to give William room to insert line breaks.  The lines in William's poem, however, are written in a regular iambic tetrameter, and each stanza has an ababcc rhyme scheme: \"I Wandered Lonely as a Cloud\" is a very poetic poem--it does little to push the bounds of the form it employs.  When held alongside Dorothy's journal entry, the regularity of the rhyme scheme and meter in \"I Wandered Lonely as a Cloud,\" make it seem as though William buries his description of daffodils in poetic conventions so that his description is distinct from Dorothy's.  Therefore, William's insistence on making the poetic form very present could be read as a way that he asserts himself as an individual, distinguishing his works from his sister's."); //#FFD6FF
+		$(".conj").css('border-color', '#99EBD6');
+		//$(".but").css('border-color', '#FFADFF');
+		//pronouns
+		IHilite();
+		mouseHilite(["they"], ["#E0FFE0"], "Because both Dorothy's journal and William's poem are about daffodils, no significant differences accompany their respective uses of pronouns that refer to the daffodils (\"they,\" \"them,\" \"their\").");
+		$(".they").css('border-color', '#9BD7AF');
+		//verbs
+		mouseHilite(["grew"], ['#F1E3FF'], "Though the verbs \"grew\" (DW l. 9) and \"stretched\" (WW l. 9) both indicate the same type of vertical action, Dorothy's description is far more organic than William's.  Her daffodils \"gr[o]w\" in their natural habitat \"among the mossy stones,\" but William's are \"stretched\" in a hyperbolic \"never-ending line\" (l. 9).  The strangeness of this image, when compared with Dorothys, demonstrates again what can happen \"when William does work from Dorothy's journals.\"<sup class=\"8\">8</sup>  Though \"it is important for him to distance himself, separating himself from her words as from an actual experience,\"<sup class=\"8\">8</sup> William is not always successful.  Here, for instance, he ends up here with an image that is essentially a caricature of Dorothy's.");
+		$(".grew").css('border-color', '#DEBDFF');
+		mouseHilite(["float"],['#F1E3FF'], "William borrows Dorothy's \"floated,\" changing both the verb's tense and context.  The appropriation demonstrates what Elizabeth Fay argues in <i>Becoming Wordsworthian</i>, that William \"transforms [Dorothy's] sign system from [...] metaphors of community and nurturing, to masculine imagings of the self.\"<sup class=\"8\">8</sup>  In Dorothy's passage, \"floated\" appears in the context of Dorothy's imaginings about how the daffodils made it to the side of the lake she and William are walking on.  Dorothy's hypothetical \"fanc[ying]\" (l. 2) implicitly invokes what Fay calls \"metaphors of community\" because Dorothy does not imagine that the daffodils exist in a vacuum--she believes that they interact with other forces in a larger system.  William, on the other hand, uses a variation of the verb \"floated\" in an entirely different context.  His verb, \"floats\" (l. 2) is linked to the poem's \"I,\" an entity that clearly is an image of \"self\" that Fay mentions.  The speaker in \"I Wandered Lonely as a Cloud\" borrows Dorothy's language, but uses it to separate himself from that language.  The verb \"floats\" emphasizes the solitary \"I\" of the poem, and, as part of the \"like a cloud\" simile, also suggests that the poem is rootless, thereby  downplaying the role Dorothy's journal entry played in the poem's creation.");
+		mouseHilite(["saw"],["#F1E3FF"], "Both Dorothy's and William's descriptions of the daffodils are rich with visual imagery, so the verb \"saw\" plays similar roles in the scenes they paint.  The context of the verb's usage, however, differs between the two texts.  Levin says that Dorothy's description \"locates a society engaged in a communal act of perception.\"<sup class=\"6\">6</sup>  Indeed, Dorothy uses \"saw\" (ll. 2, 6) with the collective pronoun \"we\" two out of the three times the verb appears in her journal entry.  For her final use of the verb, she uses it in the phrase \"I never saw\" (l. 8), which almost denies the \"I\"'s action of seeing, the act that is arguably the most important one in a description of a vivid, vibrant scene.  William's speaker, on the other hand, owns the this act of seeing, and, as Levin notices, places himself definitively within the text.<sup class=\"6\">6</sup>  Both of William's uses of \"saw\" (ll. 3, 11) are linked with the pronoun \"I,\" and unlike Dorothy's, do not contain any negative adverbs.");
+		$(".saw1").css("border", "2px dashed #FFFFF5");
+		$(".saw").mouseover(function() {
+			$(".saw1").css("background-color", "#F1E3FF");
+		});
+		$(".saw").mouseout(function() {
+			$(".saw1").css("background-color", "transparent");
+		});
+		$(".saw").mouseover(function() {
+			$(".saw1").css("border-color", "#DEBDFF");
+		});
+		$(".saw").mouseout(function() {
+			$(".saw1").css("border-color", "#FFFFF5");
+		});
+		mouseHilite(["sprung", "sprightly"],["#F1E3FF", "#F1E3FF"], "One of the most interesting phrases in William's poem is \"in sprightly\" (l. 12), which somehow brings to mind the part of Dorothy's entry that says that the \"little colony [of daffodils] had so sprung up\" (l. 4).  While the words \"sprightly\" and \"sprung\" are not necessarily related, the connection between them is largely connotative--we generally think that sprightly things spring about.  In the context of the poem, however, William uses meter to his advantage, further linking the two words.  The iambic tetrameter of the line makes the phrase \"in sprightly\" spring aurally: the unstressed \"in\" is like the compression of a spring, the stressed \"spright-\" is the release, and the unstressed \"-ly\" does the work of gravity, bringing the stressed syllable back down.  By relying on connotation and the poetry's metric form, William emphasizes the daffodils' vivacity that Dorothy evokes in a way that helps establish him as \"the working, romantic poet\" that Levin says he wants to be.<sup class=\"6\">6</sup>");
+		mouseHilite(["glancing", "sparkle"],["#F1E3FF", "#F1E3FF"], "Dorothy's single use of \"glancing\" becomes four different words in William's poem.  As a part of a visual description, \"glancing\" describes the effect of light on the daffodils, but as a gerund that comes after Dorothy personifies daffodils--these daffodils are \"danc[ing]\" (l. 12) and \"laugh[ing]\" (l. 13) very much like people would--\"glancing\" also takes on the meaning of \"looking.\"  Therefore, rather than merely reflecting the sunlight, the daffodils are also \"glancing\" or looking at Dorothy and William while Dorothy and William look at the daffodils.  This reciprocal looking, however, is not in \"I Wandered Lonely as a Cloud.\"  Though \"shine\" (l. 7), \"twinkle\" (l. 8), \"sparkling\" (l. 14), and \"flash\" (l. 21) all embody the play of light on objects like \"glancing\" does, none of them involve the natural scene looking back at William.  When William does use words related to looking (\"glance\" and \"gazed\"), he is careful to attribute that act of looking to the \"I\": in line 11, the \"I\" sees the daffodils \"at a glance,\" and in line 17, the \"I\" is the one that \"gazes.\"</p><p>William's choice of \"flash\" also operates to differentiate his idea of nature from Dorothy's: William sees a static nature, while Dorothy sees a \"changing\" one (l. 14).  \"Flash\" brings to mind photography, which freezes and preserves a scene as it is, and also suggests a singular scene that appears in his mind's eye.  In Dorothy's description, however, the light \"glanc[es]\" off the daffodils, which are also moving in the wind.  Because the daffodils move as light hits them, the \"glancing\" becomes a function of time, and causes the scene to change.  In this way, Dorothy's \"glancing\" allows the scene to change in ways that William's \"flash\" does not.</p>");
+		mouseHilite(["tossed", "tossing"],["#F1E3FF", "#F1E3FF"], "In his choice of \"tossing\" (l. 12), we see William again borrowing Dorothy's words.  However, William does not incorporate the verb \"reeled\" (DW l. 12) anywhere in his poem, despite its similarities to \"toss\"--both describe a free sort of movement that happens in the air.  One potential reason for this is related to the ideas discussed in the notes triggered by \"under\" (DW l. 6) and by \"stragglers\" (DW l. 16).  William tends to simplify the scene before him so that it coheres in a more purposeful way.  That impulse operates here in his choice of \"tossed\" over \"reeled\" because \"toss\" connotes a sense of control that \"reel\" does not.  Though William uses \"fluttering\" (l. 6), a verb that connotes similar types of movements \"reeling\" would, it does not have the almost erratic force that \"reeling\" does.  Thus, when William writes that the daffodils are \"fluttering\" (l. 6) or \"tossing\" (l. 12) rather than \"reeling,\" he maintains an amount of control over the scene he describes--one that is necessary if he is to recollect a scene that generates \"powerful feelings\" in \"tranquility.\"<sup class=\"7\">7</sup>  As Homans says, \"William looks at nature for the sake of the mind, whereas Dorothy, unwilling even to call it a vision, looks at nature for its own sake.\"<sup class=\"5\">5</sup>");
+		mouseHilite(["dance", "danceW"],["#FFE0F0", "#F1E3FF"], "William takes Dorothy's single mention of \"danced\" (DW l. 12; WW l. 13) and uses it in three other forms--the gerund \"dancing\" (l. 6), the noun \"dance\" (l. 12), and the singular present tense \"dances\" (l. 24).  The change from noun to present tense works much like Dorothy's repetition of \"rest\" and its variations (l. 10, 11, 19).  The shared act of \"dance\" links the daffodils and the \"heart,\" connecting William to nature, despite the fact that he is physically separated from the nature itself.");
+		restHilite();
+		$(".float").css("border-color", "#DEBDFF");
+		$(".saw").css("border-color", "#DEBDFF");
+		$(".sprung").css("border-color", "#DEBDFF");
+		$(".sprightly").css("border-color", "#DEBDFF");
+		$(".had").css("border-color", "#DEBDFF");
+		$(".glancing").css("border-color", "#DEBDFF");
+		$(".sparkle").css("border-color", "#DEBDFF");
+		$(".tossed").css("border-color", "#DEBDFF");
+		$(".tossing").css("border-color", "#DEBDFF");
+		$(".dance").css("border-color", "#FFA6C9");
+		$(".danceW").css("border-color", "#DEBDFF");
+		//adjectives
+		mouseHilite(["gay", "laughed", "glee"],["#FFE3C8", "#F1E3FF", "#FFE0F0"], "The laughter that Dorothy describes in her journal are converted to glee and jocundity in William's poem, though \"gay\" appears in both texts.  Dorothy's \"gay\" appears in \"they <i>looked</i> so gay\" (l. 14, emphasis added), while William's appears in a definitive description that excludes  other possibilities: \"A poet could not but be gay\" (l. 15).  Here again, we see Dorothy leaving room for William to occupy.  Her \"soft\" use of \"gay\" makes it easier for William to appropriate the word and use it in a different context in \"I Wandered Lonely as a Cloud.\"</p><p>To see more on Dorothy's use of \"soft\" descriptions and William's use of more definitive ones, see note triggered by \"fancied\" (DW l. 1).</p>");
+		$(".gay").css('border', '2px dashed #FFCC99');
+		$(".glee").css('border', '2px dashed #FFA6C9');
+		$(".laughed").css('border', '2px dashed #DEBDFF');
+		numHilite();
+
+		//nouns
+		mouseHilite(["water"], ["#DEEFFF"], "At the beginning of the passage, the lake is part of Dorothy's hypothesis about the daffodils' origins: she posits that the \"lake had floated the seeds ashore\" (l. 3).  By the end of the passage, however, the lake has become an obstacle that the daffodils' seeds have to travel \"over\" (ll. 14).  This shift, from active agent to passive space, helps emphasize that nature is dynamic--\"ever changing\" (l. 14), as Dorothy puts it.  In William's description, the \"lake\" (l. 5) and the \"waves\" (ll. 13, 14) remain supporters to the poem's main focus: the daffodils.  The speaker uses the lake in line 5 as a landmark to help us locate the daffodils in the scene he paints, and 8 lines later, the waves reprise their previous role and remain \"beside\" the daffodils (l. 13).  Unlike Dorothy, who leaves room for \"changing,\" William sees nature as a more static, definitive entity.");
+		$(".water").css("border-color", "#ADD6FF");
+		
+		//prepositions
+		mouseHilite(["along"],["#FFFF99"], "The uses of \"along\" (DW ll. 6, 7; WW l. 10) and \"beside\" (WW ll. 5, 13) are worth noting because both words can act as adverbs and prepositions.  Dorothy writes that she and William \"went along\" (l. 5) before coming upon the \"long belt of [daffodils] along the shore\" (l. 7).  Her uses of \"along\" take advantage of the parts-of-speech double dipping that \"along\" engages in: the first \"along\" acts as an adverb, and the second \"along\" acts as the preposition.  Because the two are used in close proximity, the second use of \"along\" as the preposition brings with it the previous use of \"along\" as adverb.  Thus, her descriptions connote a sort of movement and continuity, which then works to reinforce her belief that nature is \"ever changing\" (l. 14).</p><p>While Dorothy uses the \"along\" exclusively, William uses a mix of \"beside\" and \"along.\"  Even though the two words mean almost the same thing, their meanings in the context of these two texts seem to differ.  William's use of \"beside,\" particularly in the first stanza (l. 5), lacks the dynamic sense that \"along\" conveys, perhaps because we rarely use \"beside\" as an adverb.  In the third stanza, \"beside\" (l. 13) is accompanied with \"danced,\" which, when held against Dorothy's use of \"along,\" does the work that the adverb/preposition \"along\" does in Dorothy's description.  When William does use \"along,\" he uses it in concert with \"the margin of a bay\" (l. 10), which, of course, is the image in \"I Wandered Lonely as a Cloud\" that most matches Dorothy's description of the daffodils she sees.  Here, we see evidence again of William's inability to escape Dorothy's language.<sup class=\"6\">6</sup><sup>, </sup><sup class=\"8\">8</sup></p>");
+		$(".along").css("border-color", "#FFE680");
+		$(".along").mouseover(function() {
+			$(".along1").css("background-color", "#FFFF99");
+		});
+		$(".along").mouseout(function() {
+			$(".along1").css("background-color", "transparent");
+		});
+		specHilite(["under", "under1", "tree"], "underHilite", ["#FFFF99", "#FFE0F0", "#DEEFFF"], "#EBEBEB", ["#FFE680", "#FFA6C9", "#ADD6FF"], "At first glance, Dorothy and William appear to agree on where the \"belt\" (DW l. 7) or \"crowd\" (WW l. 3) of daffodils are--they're \"under\" (DW l. 6) or \"beneath the trees\" (WW l. 5).  But if we look more closely at what Dorothy's preposition modifies, we see that the daffodils are actually \"under the <i>boughs</i> of the trees\" (l. 6, emphasis added).  William's description cuts out Dorothy's first prepositional phrase to say, perhaps more concisely, where the daffodils are.  When compared with Dorothy's description, which allows the parts to exist with the whole, William's description then seems to subordinate the parts (the \"boughs\") to the whole (the \"trees\").  This idea of \"whole\" taking the place of \"parts\" is closely related to the idea of William's reworking of the natural scene to present a more unified picture.  By cutting out the \"boughs,\" William, in a figurative sense, cleans up the picture his visual imagery evokes.  Rather than seeing the daffodils a mess of \"boughs\" (DW l. 6) that overlap arbitrarily, we see instead the \"neater\" image of daffodils under individual trees.</p><p>To see more on William's simplification of the natural scene, see the note triggered by \"some\" (DW l. 10).</p>");
+		
+		//abstract
+		specHilite(["fancied"], "a1", ["#F1E3FF"], "#EBEBEB", ["#DEBDFF"], "Dorothy writes in almost unsure terms, choosing to stay hypothetical with \"fancied\" (l. 2) when she proposes an explanation for how the daffodils came to grow \"close to the water side\" (l. 2).  When describing the daffodils, she says that they \"verily laughed\" (l. 12), but prefaces that with the phrase \"seemed as if\" (l. 12).  In the phrase \"looked so gay\" (l. 13) a similar degree of uncertainty is present--the daffodils are not necessarily \"gay,\" but they do \"look\" as though they are.  In \"I Wandered Lonely as a Cloud,\" William's speaker does away with the uncertainty implicit in Dorothy's description.  He says that the poet \"[c]ould not be but gay\" (l. 15), removing the possibility of unhappiness for his poet that Dorothy leaves for her daffodils.  Though Dorothy's \"soft\" descriptions leave room for William's speaker to assert himself, they also work to account for Dorothy's belief that the natural scene is \"ever changing\" (l. 14).  William's more definitive descriptions reflect his ideology that the natural scene is static (he finds comfort in \"Tintern Abbey,\" for example, that the scenery has stayed the same), and can be captured in a single \"glance\" (l. 11).");
+		specHilite(["stragglers1", "stragglersverb", "stragglersadj", "stragglers"], "a2", ["#EBEBEB","#F1E3FF", "#FFE3C8", "#FFE0F0"], "#EBEBEB", ["#D6D6D6", "#DEBDFF", "#FFCC99", "#FFA6C9"], "Unlike Dorothy, who leaves room for the \"ever changing\" quality of nature, William presents a more unified version of nature in \"I Wandered Lonely as a Cloud.\"  His description emphasizes the sheer number of daffodils: they are \"continuous as the stars that shine\" (l. 7), \"stretch[ing] in never-ending line,\" and so densely grown that William can see \"[t]en thousand at a glance\" (l. 11).  William writes that all ten thousand of these daffodils are \"tossing their heads in sprightly dance,\" but Dorothy's description tells us that only some of the daffodils were dancing (ll. 10-12).  Dorothy's journal includes nature's imperfections.  She notices the \"little knot\" and the \"stragglers\" (l. 16), but decides that \"they were so few as not to disturb the simplicity and unity\" of the scene (ll. 17-18).  Dorothy's description \"affirm[s] a natural world without categories of fault,\"<sup class=\"6\">6</sup> and describes the scene without the need to smooth over irregularities.  As Woof puts it, \"Dorothy evoked things and people, and let them be.  One of our pleasures in the Journal stems from our belief that things were as she says they were.\"<sup class=\"9\">9</sup>");
+		specHilite(["heads"], "a3", ["#FFE0F0"], "#EBEBEB", ["#FFA6C9"], "Though the daffodils' \"heads\" appear in both texts along with the phrase \"their heads\" (DW l. 10; WW l. 12), opposite actions are associated with each.  The \"heads\" in Dorothy's journal are \"rest[ing]\" while those in William's poem are \"tossing.\"");
+		mouseHilite(["a4"], ["#FFE0F0"], "Dorothy's \"colony\" (l. 4) and William's \"crowd\" (l. 3), \"host\" (l. 4), and \"company\" (l. 16) of daffodils all bring to mind a similar image--that of a cluster of flowers.  What is interesting, however, is that Dorothy's \"little colony\" appears once at the beginning of the journal entry before she and William see the \"long belt of them\" (l. 7), whereas William's \"company\" (l. 16) description appears in the later half of the poem, after he has gone through the \"milky way\" (l. 8), \"line\" (l. 9), and \"margin\" (l. 10) images.  Though William's \"crowd,\" \"host,\" and \"company\" connote a sense of welcome that Dorothy's \"colony\" may not achieve, his inability to get away from the initial image that Dorothy provides in her journal demonstrates, as Fay says, just how the \"voice of another can have a power over William's imagination which silences his own voice.\"<sup class=\"8\">8</sup>");
+		$(".a4").css("border-color", "#FFA6C9");
+		specHilite(["lit", "litverb", "litadj"], "a5", ["#FFE0F0", "#F1E3FF", "#FFE3C8"],"#EBEBEB", ["#FFA6C9", "#DEBDFF", "#FFCC99"], "Dorothy's description of the daffodils facilitates the meshing of human and natural worlds.  By describing the daffodils as a \"little colony\" (l. 4), Dorothy introduces the language of imperialism, a fundamentally human activity.  The images of the daffodils as a \"road\" (l. 8) and later a \"highway\" (l. 19) also blurs the boundaries between human industry and nature.  Though roads and highways are decidedly man-made and artificial, Dorothy nevertheless uses those images to describe the daffodils, proposing perhaps that industry and nature can coexist.</p><p>William, on the other hand, does not use any of Dorothy's \"mixed\" human/nature descriptions, choosing instead to use \"milky way\" (l. 8), \"line\" (l. 9), and \"margin\" (l. 10).  These images, however, shift rapidly--the poem's speaker gives us a new description each line--and the comparisons he makes are unstable.  First, he says the daffodils are \"continuous as [...] the milky way.\"  Then, the space the flowers occupy collapses into a \"never-ending line,\" and in the next image, this \"line\" expands again to occupy part of \"the margin of a bay.\"  The effort necessary to separate his language from Dorothy's<sup class=\"6\">6</sup><sup>, </sup><sup class=\"8\">8</sup> here seems to be in vain.  Though William cycles through two other images before the last one, the image he settles on is suspiciously similar to Dorothy's: \"the margin of a bay\" occupies about the same type of space as \"belt[s]\" (l. 7), \"road[s]\" (l. 8), and \"highway[s]\" (l. 19).</p>");
+		specHilite(["breadth", "fills"], "a6", ["#FFE0F0", "#F1E3FF"], "#EBEBEB", ["#FFA6C9", "#DEBDFF"], "In Dorothy's journal, the daffodils fill the \"breadth of a country turnpike road,\" (ll. 7-8), and the mental image we see is one of horizontal filling.  This filling then evokes a feeling of completeness.  In William's poem, however, the daffodils stretch in \"never-ending line\" (l. 9).  With the verb \"stretch\" and the geometrical noun \"line,\" William's description provides a forward/backward image that does not fill out horizontally like Dorothy's does.  For William, nature seems to exist at extremes.  His \"never-ending line\" description is widthless, but when his imagery does evoke a horizontal expanse, it does so with a boundlessly expansive space--the \"continuous [...] milky way\" (l. 7-8).  What does have bounds, though, seem to be people.  At the end of William's poem, the speaker's \"heart with pleasure fills / And dances with the daffodils\" (ll. 23-4).");
+		specHilite(["ashore"], "a7", ["#EBEBEB"], "#EBEBEB", ["#D6D6D6"], "Dorothy's description of her and William's discovery of the daffodils is a gradual one.  They come across a \"few daffodils\" first (l. 2), and \"went along\" (l. 4) until they saw \"at last\" (l. 5) the field of beautiful daffodils.  In \"I Wandered Lonely as a Cloud,\" William leaves out the gradual discovery of the daffodils that Dorothy records in her journal, opting instead to say he saw \"all at once [...] a crowd, a host, of golden daffodils\" (ll. 3-4).  The discovery of the daffodils in the poem adheres closely to William's poetic process--a process that is predicated on the \"spontaneous overflow of powerful feelings\"<sup class=\"7\">7</sup> that are later \"recollected in tranquility.\"<sup class=\"7\">7</sup>  Contrary to Dorothy's description, which includes a possible point of origin for the daffodils, William's description omits the question of origin and presents us with a scene that, like the inspiration for his poetry, appears \"spontaneous[ly].\" ");
+		specHilite(["whennoun", "whennoun1", "whenadj", "when"], "a8", ["#FFCECE", "#E0FFE0", "#EBEBEB", "#EBEBEB"], "#EBEBEB", ["#E68080", "#9BD7AF", "#D6D6D6", "#D6D6D6"], "Dorothy's journal entry opens and closes with the inclusive first person plural \"we\" (l. 1, 19) but William opens with the exclusive first person singular pronoun \"I\" (l. 1) and ends the first person possessive pronoun \"my\" (l. 24).  He emphasizes this \"I\" with the word \"lonely,\" and then goes even further to add on a simile between himself and a cloud.  The simile places the poem's speaker \"high o'er vales and hills,\" where he is clearly alone.  William's last stanza again emphasizes the solitary \"I\"--five times in six lines, in fact.  The internal rhyme with \"I lie\" reproduces that \"I\"-ness twice in the short span of two words; the \"inward eye\" is the mind's eye, but could also be homophonously read as the \"inward [I].\"  The next line's \"solitude\" emphasizes the singular nature of the \"pleasure\" that the daffodils bring him, and \"my heart\" suggests, like \"solitude,\" that William's experience of nature is his alone.");
+		specHilite(["one", "one1", "one2"], "a9", ["#FFE0F0", "#F1E3FF", "#EBEBEB"], "#EBEBEB", ["#FFA6C9", "#DEBDFF", "#D6D6D6"], "Though Dorothy does not deal with oneness often in her description of the daffodils, she does describe the daffodils as \"one busy highway\" (l. 18).  William, on the other hand, highlights his \"solitude\" with internal rhyme in line 19 (\"I lie\") and with the play on \"eye\"/\"I\" in line 21.  But Dorothy's use of \"one,\"  rather than isolating the daffodils like William's focus on oneness does to his \"I,\"  actually leaves open the possibility of other \"busy highway[s]\" filled with daffodils so that the scene that she and William see is really one of many.  Dorothy's \"one,\" which actually suggests the possibility of many, then helps William occupy the scene she describes in her journals because William can imagine that the scene he is writing about in \"I Wandered Lonely as a Cloud\" is not the same scene Dorothy sees, but rather another one of those \"busy highway[s]\" that Dorothy posits exist.");
+		specHilite(["blew", "wind"], "a10", ["#F1E3FF", "#DEEFFF"], "#EBEBEB", ["#DEBDFF", "#ADD6FF"], "When Dorothy describes the daffodils \"toss[ing]\" (l. 11), \"reel[ing]\" (l. 12), \"danc[ing]\" (l. 12), and laugh[ing] (l. 13), she attributes the cause of that movement to the \"wind that blew upon them\" (l. 13).  In the next sentence, she says again: \"[t]his wind blew directly over the lake to them\" (l. 15) as if to emphasize that the wind is the agent giving the daffodils their vivacity.  In \"I Wandered Lonely as a Cloud,\" however, the \"wind\" does not make an appearance, but \"breeze\" does (l. 6).  By changing \"wind\" to the milder \"breeze,\" William downplays the wind's role in making the daffodils dance.  He also relegates the \"breeze\" to prepositional phrase \"in the breeze,\" effectively removing it as the agent that, to use Dorothy's words, \"blew directly\" on the daffodils.  The \"stars\" (l. 7) of William's poem are the daffodils, so William leaves out any forces interfere with the daffodils' role--in fact, he points out that the daffodils \"out-d[o]\" the waves \"beside them\" (l. 13).  Unlike Dorothy, who describes the \"lake\" (l. 3) and the \"wind\" (ll. 13-15) as \"facilitating rather than competitive presence[s]\"<sup class=\"6\">6</sup>--she posits that the lake brought the daffodils to this side of the lake, and writes that the wind makes the daffodils dance--Wordsworth pits the different parts of nature against each other and declares the daffodils his winner.");
+		//a10 stuffs
+		/*$(".blew").css('border', '2px dashed #DEBDFF');
+		$(".wind").css("border", "2px dashed #ADD6FF");
+		$(".blew").mouseover(function(){
+			$(".a10").css('background-color', '#EBEBEB')
+			$(".blew").css('background-color', "#F1E3FF");
+		});
+		$(".blew").mouseout(function(){
+			$(".blew").css('background-color', "transparent");
+			$(".a10").css('background-color', "transparent");
+		});
+		$(".wind").mouseover(function(){
+			$(".a10").css('background-color', '#EBEBEB')
+			$(".wind").css('background-color', "#DEEFFF");
+		});
+		$(".wind").mouseout(function(){
+			$(".a10").css('background-color', 'transparent')
+			$(".wind").css('background-color', "transparent");
+		});
+		$(".blew").click(function() {
+			var replaced = $(".notes").html().replace($(".notes").html(), "When Dorothy describes the daffodils \"toss[ing]\" (l. 11), \"reel[ing]\" (l. 12), \"danc[ing]\" (l. 12), and laugh[ing] (l. 13), she attributes the cause of that movement to the \"wind that blew upon them\" (l. 13).  In the next sentence, she says again: \"[t]his wind blew directly over the lake to them\" (l. 15) as if to emphasize that the wind is the agent giving the daffodils their vivacity.  In \"I Wandered Lonely as a Cloud,\" however, the \"wind\" does not make an appearance, but \"breeze\" does (l. 6).  By changing \"wind\" to the milder \"breeze,\" William downplays the wind's role in making the daffodils dance.  He also relegates the \"breeze\" to prepositional phrase \"in the breeze,\" effectively removing it as the agent that, to use Dorothy's words, \"blew directly\" on the daffodils.  The \"stars\" (l. 7) of William's poem are the daffodils, so William leaves out any forces interfere with the daffodils' role--in fact, he points out that the daffodils \"out-d[o]\" the waves \"beside them\" (l. 13).  Unlike Dorothy, who describes the \"lake\" (l. 3) and the \"wind\" (ll. 13-15) as \"facilitating rather than competitive presence[s]\"<sup class=\"6\">6</sup>--she posits that the lake brought the daffodils to this side of the lake, and writes that the wind makes the daffodils dance--Wordsworth pits the different parts of nature against each other and declares the daffodils his winner.");
+			$(".notes").html(replaced);
+		});
+		$(".wind").click(function() {
+			var replaced = $(".notes").html().replace($(".notes").html(), "When Dorothy describes the daffodils \"toss[ing]\" (l. 11), \"reel[ing]\" (l. 12), \"danc[ing]\" (l. 12), and laugh[ing] (l. 13), she attributes the cause of that movement to the \"wind that blew upon them\" (l. 13).  In the next sentence, she says again: \"[t]his wind blew directly over the lake to them\" (l. 15) as if to emphasize that the wind is the agent giving the daffodils their vivacity.  In \"I Wandered Lonely as a Cloud,\" however, the \"wind\" does not make an appearance, but \"breeze\" does (l. 6).  By changing \"wind\" to the milder \"breeze,\" William downplays the wind's role in making the daffodils dance.  He also relegates the \"breeze\" to prepositional phrase \"in the breeze,\" effectively removing it as the agent that, to use Dorothy's words, \"blew directly\" on the daffodils.  The \"stars\" (l. 7) of William's poem are the daffodils, so William leaves out any forces interfere with the daffodils' role--in fact, he points out that the daffodils \"out-d[o]\" the waves \"beside them\" (l. 13).  Unlike Dorothy, who describes the \"lake\" (l. 3) and the \"wind\" (ll. 13-15) as \"facilitating rather than competitive presence[s]\"<sup class=\"6\">6</sup>--she posits that the lake brought the daffodils to this side of the lake, and writes that the wind makes the daffodils dance--Wordsworth pits the different parts of nature against each other and declares the daffodils his winner.");
+			$(".notes").html(replaced);
+		});
+		*/
+		specHilite(["never1", "never2", "never"], "a11", ["#EBEBEB", "#F1E3FF", "#FFCECE"], "#EBEBEB", ["#D6D6D6", "#DEBDFF", "#E68080"], "Dorothy's \"tendency to omit a central or prominent self\"<sup class=\"5\">5</sup> has already been noted (see note triggered by \"we\" [DW l. 1]), but Homans offers a compelling take on <i>why</i> Dorothy repeatedly leaves herself out: \"[Dorothy] preempts her being excluded by calling it her own reluctance to trespass into her brother's territory\"<sup class=\"5\">5</sup>  In <i>The Grasmere and Alfoxden Journals</i>, Pamela Woof argues that \"Dorothy was not writing for strangers to read; she was writing for [William] only.\"<sup class=\"9\">9</sup>  Taking Homans and Woof together, then, Dorothy leaves herself out of her journals so that William has room to work.  By negating the single invoked \"I\" in this passage, Dorothy leaves room for William's many \"I\"'s; she describes her act of seeing the daffodils as a negative act--she \"never saw\" daffodils so beautiful--so that William can say that he \"gazed\" (WW l. 17) and \"saw\" (WW l. 11) them.  Dorothy's inclusive \"we\" includes William in the process of seeing and experiencing nature so that he can more easily position himself in the scene when he \"wander[s]\" (WW l. 1) through the \"wealth\" (WW l. 18) that Dorothy's description of the daffodils bring to him.");
+		//a12Hilite();
+		specHilite(["wittle"], "a13", ["#FFE3C8"], "#EBEBEB", ["#FFCC99"], "Though William smooths over the irregularities in the scene that he sees, it is still interesting to note that Dorothy's phrase \"little knot\" (l. 16) is, strangely enough, reproduced aurally in William's poem as \"little thought\" (l. 17).  The repetition of \"little\" and the rhyme of \"knot\" and \"thought\" link the two phrases when Dorothy's journal is held alongside William's poem, producing a curious intertextual moment.  This is either something like a writer's parapraxis, or a very coincidental choice of words on William's part.");
+		specHilite(["changing", "changing1"], "a15", ["#F1E3FF", "#EBEBEB"], "#EBEBEB", ["#DEBDFF", "#D6D6D6"], "In her description, Dorothy uses \"and\" frequently to link clauses together.  She also uses a variety of verbs (\"tossed,\" \"reeled,\" \"danced\"), and a couple of gerunds (\"glancing,\" \"changing\").  These parts of speech all connote continuation and movement, which help emphasize that nature is dynamic--\"ever changing,\" as Dorothy puts it.  The sense of change is also mirrored in the content of her description: as Dorothy explains, she and William \"saw a few daffodils close to the water side [...] but as [they] went along there were more and yet more and at last [...they] saw that there was a long belt of them along the shore.\"  The daffodils scene's gradual transformation, which Dorothy and William discover by walking through nature, frames nature as something that they actively experience, not as something that they passively take in.  By the end of the passage, Dorothy draws a connection between the daffodils and William and herself: like the daffodils that \"rested their heads upon [...] stones as on a pillow for weariness,\" she and William \"rested again and again.\"  The shared activity of \"rest\" suggests that William and Dorothy, like the scene they see, have undergone their own transformation: they go from being on the outside, looking at the daffodils, to being integrated parts of the natural scene, \"resting\" like the daffodils do.  In contrast, William's description offers a much more static understanding of nature.  He comes across the daffodils all at once, and is able to see them \"at a glance.\"  For him nature seems to have the ability to transform man, without undergoing any change itself.");
+		
+		specHilite(["beautiful", "beautiful1"], "a16", ["#FFE3C8", "#F1E3FF"], "#EBEBEB", ["#FFCC99", "#DEBDFF"], "Comparing Dorothy's response to William's reveals a fundamental difference in their approach to nature.  In Dorothy's description, we see what she sees--\"daffodils so beautiful\" (l. 9) she has never seen them anywhere else.  In William's version, we still see him \"gaz[ing]\" (l. 17) at the daffodils, but he is concerned with the \"wealth the show to [him] had brought\" (l. 18).  This almost utilitarian approach to nature makes Levin's point that William \"appropriate[s] the world for use.\"<sup class=\"6\">6</sup>  Dorothy, on the other hand, \"refuses this kind of appropriation, seeming to come from an imagination that exists to perceive what passes before it.\"<sup class=\"6\">6</sup></p>");
+		
+		specHilite(["close", "close1"], "a17", ["#EBEBEB", "#FFFF99"], "#EBEBEB", ["#D6D6D6", "#FFE680"], "William keeps the daffodils' spatial position consistent with Dorothy's description, though his speaker sees the entire \"crowd\" (l. 3) of flowers \"beside the lake\" (l. 5), while Dorothy records just a \"few\" daffodils \"close to the water side\" (l. 2).");
+
+		//extra stanza
+		$(".thirdstanza").css("border", "2px dashed #D6D6D6");
+		$(".thirdstanza").mouseover(function() {
+			$(".extra").css("background-color", "#EBEBEB");
+		});
+		$(".thirdstanza").mouseout(function() {
+			$(".extra").css("background-color", "transparent");
+		});
+		$(".thirdstanza").click(function() {
+			var replaced = $(".notes").html().replace($(".notes").html(), "The third stanza was added later in 1815, eleven years after the poem was originally published (1804).<sup class=\"10\">10</sup>");
+			$(".notes").html(replaced);
+		});
+
+		//citations
+		$(document).on('click', '.1', function() {
+			new Messi("\"Dorothy Wordsworth (1771-1855).\" In <i>The Norton Anthology of English Literature</i>, edited by Stephen Greenblatt and M. H. Abrams, 389. 8th ed. New York: Norton, 2006.");
+		});
+		$(document).on('click', '.2', function() {
+			new Messi("\"William Wordsworth (1770-1850).\" In <i>The Norton Anthology of English Literature</i>, edited by Stephen Greenblatt and M. H. Abrams, 243. 8th ed. New York: Norton, 2006.");
+		});
+		$(document).on('click', '.3', function() {
+			new Messi("\"From the Grasmere Journals.\" In <i>The Norton Anthology of English Literature</i>, edited by Stephen Greenblatt and M. H. Abrams, 393-6. 8th ed. New York: Norton, 2006.");
+		});
+		$(document).on('click', '.4', function() {
+			new Messi("\"I Wandered Lonely as a Cloud\" In <i>The Norton Anthology of English Literature</i>, edited by Stephen Greenblatt and M. H. Abrams, 305. 8th ed. New York: Norton, 2006.");
+		});
+		$(document).on('click', '.5', function() {
+			new Messi("Homans, Margaret. \"Dorothy Wordsworth.\" In <i>Women Writers and Poetic Identity: Dorothy Wordsworth, Emily Bronte, and Emily Dickinson</i>, 73-8. Princeton, N.J.: Princeton University Press, 1980.");
+		});
+		$(document).on('click', '.6', function() {
+			new Messi("Levin, Susan M. \"Home.\" In <i>Dorothy Wordsworth and Romanticism</i>, 35-6. New Brunswick: Rutgers, the State University, 1987.");
+		});
+		$(document).on('click', '.7', function() {
+			new Messi("\"Preface to Lyrical Ballads.\" In <i>The Norton Anthology of English Literature</i>, edited by Stephen Greenblatt and M. H. Abrams, 273. 8th ed. New York: Norton, 2006.");
+		});
+		$(document).on('click', '.8', function() {
+			new Messi("Fay, Elizabeth A. \"Authoring Selves, Traversing Ground.\" In <i>Becoming Wordsworthian: A Performative Aesthetics</i>, 148-151. Amherst, Mass.: University of Massachusetts Press, 1995.");
+		});
+		$(document).on('click', '.9', function() {
+			new Messi("Woof, Pamela. \"Introduction.\" In <i>The Grasmere and Alfoxden Journals</i>, ix-xxxiii. Oxford: Oxford UP, 2002.");
+		});
+		$(document).on('click', '.10', function() {
+			new Messi("\"I Wandered Lonely as a Cloud.\" Wikipedia. March 12, 2014. Accessed November 28, 2014. http://en.wikipedia.org/wiki/I_Wandered_Lonely_as_a_Cloud.");
+		});
+	});
+	</script>
+	<style>
+	body {
+		background-color: #FFFFF5;
+	}
+	p {
+		font-family: 'Oxygen';
+		font-weight: 100;
+		font-size: 14px;
+		line-height: 22px;
+	}
+	h1 {
+		font-family: 'Roboto';
+		font-weight: 300;
+		font-size: 40px;
+		text-align: left;
+		padding-left: 25px;
+		border-bottom: 1px solid #000000;
+		margin-bottom: 15px;
+	}
+	td {
+		vertical-align: top;
+	}
+	a {
+		text-decoration: none;
+		font-size: 20px;
+		color: #000000;
+		text-align: center;
+		padding-top: 5%;
+		padding-bottom: 5%;
+	}
+	sup {
+		text-decoration: underline;
+		color: #8585AD;
+	}
+	.button {
+		font-family: 'Julius Sans One';
+		font-size: 20px;
+		color: #FFFFE6;
+		text-align: center;
+		background-color: #B89470;
+		border: 2px solid #B89470;
+		padding-top: 5%;
+		padding-bottom: 5%;
+	}
+	.unclicked1 {
+		font-family: 'Julius Sans One';
+		font-size: 20px;
+		color: #000000;
+		text-align: center;
+		border: 2px solid #D4BFA9;
+		background-color: #FFFFF5;
+		padding-top: 5%;
+		padding-bottom: 5%;
+	}
+	.unclicked2 {
+		font-family: 'Julius Sans One';
+		font-size: 20px;
+		color: #000000;
+		text-align: center;
+		border: 2px solid #D4BFA9;
+		background-color: #FFFFF5;
+		padding-top: 5%;
+		padding-bottom: 5%;
+	}
+	.tabs1 {
+		text-align: center;
+		width: 170px;
+		border-left: 20px solid transparent;
+		border-right: 20px solid transparent;
+	}
+	.tabs2 {
+		text-align: center;
+		width: 170px;
+		border-left: 20px solid transparent;
+		border-right: 20px solid transparent;
+	}
+	.tabspaced {
+		text-align: center;
+		width: 170px;
+		padding-left: 0px;
+		border-left: 20px solid transparent;
+		border-right: 20px solid transparent;
+	}
+	.heading {
+		/*border-style: double;
+		border-width: 5px;
+		border-color: #996633;*/
+		padding-bottom: 15px;
+	}
+	</style>
+</head>
+<body>
+	<div class="heading">
+		<h1>
+			READING THE WORDSWORTHS
+			<p style="font-size: 1px; line-height: 3px">&nbsp;&nbsp;</p>
+		</h1>
+
+		<table align="center">
+			<tr>
+				<td class="tabs1">
+					<a href="Intro.html"><div class="unclicked1">Home</div></a>
+				</td>
+				<td></td>
+				<td class="tabspaced">
+					<div class="button">Texts</div>
+				</td>
+				<td></td>
+				<td class="tabs2">
+					<a href="Sources.html"><div class="unclicked2">Sources</div></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<table align="center" style="border-top: 1px solid #000000">
+		<tr height="50px">
+			<td></td>
+			<td align="left">
+				<p style="font-size: 17px; font-weight: 500">Excerpt from Grasmere Journal, April 15, 1802</p>
+			</td>
+			<td></td>
+			<td align="left">
+				<p style="font-size: 17px; font-weight: 500">"I Wandered Lonely as a Cloud"</p>
+			</td>
+			<td align="left">
+				<p style="font-size: 17px; font-weight: 500">Notes</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 40px; padding-left: 50px">
+				<p>
+					1
+					<br>
+					<br>
+					<br>4
+					<br>
+					<br>
+					<br>
+					<br>8
+					<br>
+					<br>
+					<br>
+					<br>12
+					<br>
+					<br>
+					<br>
+					<br>16
+					<br>
+				</p>
+			</td>
+			<td style="width: 450px">
+				<p>
+					<span class="a12"><span class="a8"><span class="when">When</span> <span class="we1">we</span> were in the woods beyond Gowbarrow park</span> <span class="we">we</span> <span class="saw">saw</span> <span class="a17">a <span class="numbers">few</span> <span class="daffodils">daffodils</span> <span class='close'>close</span> to the <span class="water">water</span> side.</span></span> <span class="a1"><span class="we">We</span> <span class="fancied">fancied</span> that <span class="a7">the <span class="water">lake</span> <span class="had">had</span> <span class="float">floated</span> the seeds <span class="ashore">ashore</span></span> <span class="conj">and</span> that the <span class="a5"><span class="litadj">little</span> <span class="a4">colony</span></span> <span class="had">had</span> so <span class="sprung">sprung</span> up. <span class="a7"><span class="but">But</span> as <span class="we">we</span> went <span class="along">along</span> there were <span class="numbers">more</span> <span class="conj">and</span> yet <span class="numbers">more</span> <span class="conj">and</span> <span class="ashore">at last</span></span></span> <span class="underHilite"><span class="under">under</span> the <span class="under1">boughs</span> of the <span class="tree">trees</span></span>, <span class="we">we</span> <span class="saw">saw</span> that there was a <span class="a6"><span class="a5">long <span class="lit">belt</span></span> of <span class="they">them</span> <span class="along">along</span> the shore, about the <span class="breadth">breadth</span> of a <span class="a5">country turnpike <span class="lit">road</span></span></span>.<span class="a16"><span class="a11"><span class="firstI"> I </span><span class="never1">never</span> <span class="saw">saw</span></span> daffodils so <span class="beautiful">beautiful</span></span> <span class="a14"><span class="they">they</span> <span class="grew">grew</span> among the mossy stones</span> about <span class="conj">and</span> about <span class="they">them</span>, <span class="a2"><span class="stragglers1">some</span> <span class="a3"><span class="rest">rested</span> <span class="they">their</span> <span class="heads">heads</span></span> <span class="upon">upon</span> these stones as <span class="upon">on</span> a pillow for <span class="rest2">weariness</span> <span class="conj">and</span> the <span class="rest1">rest</span> <span class="tossed">tossed</span> <span class="conj">and</span> <span class="tossed">reeled</span> <span class="conj">and</span> <span class="danceW">danced</span></span> <span class="conj">and</span> <span class="a1"><span class="fancied">seemed</span> as if <span class="they">they</span> verily <span class="laughed">laughed</span></span> with <span class="a10">the <span class="wind">wind</span> that blew <span class="upon">upon</span> <span class="they">them</span> over the <span class="water">lake</span></span>, <span class="a15"><span class="they">they</span> <span class="a1"><span class="fancied">looked</span> so <span class="gay">gay</span></span> ever <span class="glancing">glancing</span> <span class="a1">ever <span class="changing">changing</span></span>.</span> <span class="a10">This <span class="wind">wind</span> blew directly over the <span class="water">lake</span> to <span class="they">them</span>.</span> There was <span class="a2">here <span class="conj">and</span> there a <span class="a13"><span class="wittle">little</span> knot</span> <span class="conj">and</span> a <span class="numbers">few</span> <span class="stragglers">stragglers</span></span> a <span class="numbers">few</span> yards higher up <span class="but">but</span> <span class="they">they</span> were so <span class="numbers">few</span> as <span class="a2">not to <span class="stragglersverb">disturb</span> the simplicity <span class="conj">and</span> unity</span> <span class="conj">and</span> life of that <span class="a5"><span class="a9"><span class="one2">one</span></span> busy <span class="lit">highway</span></span>. <span class="a8"><span class="we"><span class="whennoun1">We</span></span> <span class="rest">rested</span> again <span class="conj">and</span> again</span>.
+				</p>
+			</td>
+			<td style="width: 40px; padding-left: 50px">
+				<p>
+					1
+					<br>
+					<br>
+					<br>4
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>8
+					<br>
+					<br>
+					<br>
+					<br>12
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>16
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>20
+					<br>
+					<br>
+					<br>
+					<br>24
+				</p>
+			</td>
+			<td style="width: 380px">
+				<p>
+				<span class="a12"><span class="a8"><span class="a11"><span class="firstI">I </span><span class="never2">wandered</span></span> <span class="whenadj">lonely</span> as a cloud
+				<br>That <span class="float">floats</span> <span class="upon">on</span> high o'er vales and hills</span>,</span>
+				<br><span class="a7">When <span class="ashore">all at once</span><span class="I1"> I </span><span class="saw">saw</span> a <span class="a4"><span class="numbers1">crowd</span></span></span>,
+				<br>A <span class="a4"><span class="numbers1">host</span></span>, of golden <span class="daffodils">daffodils</span>;
+				<br><span class="a17"><span class="along1"><span class="close1">Beside</span></span> the <span class="water">lake</span></span>, <span class="underHilite"><span class="under">beneath</span> the <span class="tree">trees</span></span>,
+				<br><span class="tossed">Fluttering</span> <span class="conj">and</span> <span class="danceW">dancing</span> in the <span class="wind">breeze</span>.
+				<br>
+				<br><span class="a2"><span class="numbers1"><span class="stragglersadj"><span class="a6">Continuous</span></span></span></span> as the stars that <span class="sparkle">shine</span>
+				<br><span class="conj">And</span> <span class="sparkle">twinkle</span> <span class="upon">on</span> the <span class="a5"><span class="a2"><span class="lit"><span class="a6">milky way</span></span></span></span>,
+				<br><span class="a14"><span class="a6"><span class="they">They</span> <span class="grew">stretched</span> in <span class="a5"><span class="a2"><span class="stragglers1">never</span>-<span class="litverb">ending</span> <span class="breadth">line</span></span></span></span></span>
+				<br><span class="along">Along</span> the <span class="a5"><span class="lit">margin</span> of a bay</span>:
+				<br><span class="a2"><span class="numbers">Ten thousand</span> <span class="a15"><span class="a1"><span class="a11"><span class="saw1"><span class="fancied">saw</span></span><span class="never"><span class="I"> I </span></span></span>at <span class="changing1">a</span> <span class="sparkle">glance</span></span></span>,
+				<br><span class="a3"><span class="tossing">Tossing</span> <span class="they">their</span> <span class="heads">heads</span></span> in <span class="sprightly">sprightly</span> <span class="dance">dance</span></span>.
+				<br>
+				<br><span class="extra"><span class="thirdstanza">The</span> <span class="water">waves</span> <span class="along">beside</span> <span class="they">them</span> <span class="danceW">danced</span>; <span class="but">but</span> <span class="they">they</span>
+				<br><span class="a10"><span class="blew">Out-did</span> the <span class="sparkle">sparkling</span> <span class="water">waves</span> in <span class="glee">glee</span></span>:
+				<br>A poet <span class="a1"><span class="fancied">could</span> not <span class="but">but</span> be <span class="gay">gay</span></span>,
+				<br>In such a <span class="gay">jocund</span> <span class="a4"><span class="a2">company</span></span>:
+				<br><span class="a16"><span class="a11"><span class="I"><span class="never">I </span></span><span class="sparkle">gazed</span></span>--<span class="conj">and</span> <span class="beautiful1">gazed</span>--<span class="but">but</span> <span class="a13"><span class="wittle">little</span> thought</span>
+				<br><span class="a11">What wealth the show to <span class="never"><span class="my">me</span></span> <span class="had">had</span> brought</span></span>:</span>
+				<br>
+				<br>For oft, <span class="restW">when <span class="upon">on</span> <span class="my1">my</span> couch<span class="a8"><span class="a9"><span class="a11"><span class="I"><span class="never"> I </span></span><span class="one1">lie</span></span></span></span></span>
+				<br>In vacant or in pensive mood,
+				<br><span class="they">They</span> <span class="sparkle">flash</span> <span class="upon">upon</span> that <span class="a9"><span class="a8">inward <span class="one">eye</span></span></span>
+				<br>Which is the bliss of <span class="a9"><span class="a8"><span class="one">solitude</span></span></span>;
+				<br><span class="a6"><span class="conj">And</span> then <span class="a8"><span class="my"><span class="whennoun">my</span></span> heart</span> with pleasure <span class="fills">fills</span></span>,
+				<br><span class="a8"><span class="conj">And</span> <span class="danceW">dances</span> with the daffodils.</span>
+				</p>
+			</td>
+			<td style="width: 380px; padding-right: 50px">
+				<p class="notes" style="position:absolute; padding-right:63px;">Mouseover the boxed text to reveal highlights, and click to display notes. In the notes, click citation numbers to view the source.</p>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

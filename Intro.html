@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Julius+Sans+One' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Oxygen:300' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  	<link rel="stylesheet" href="messi.css" />
+	<script src="messi.js"></script>
+	<script>
+	$(document).ready(function(){
+		//buttons
+		$(".unclicked1").mouseover(function() {
+			$(".unclicked1").css("background-color", "#D4BFA9");
+			$(".unclicked1").css("color", "#FFFFF5");
+		});
+		$(".unclicked1").mouseout(function() {
+			$(".unclicked1").css("background-color", "#FFFFF5");
+			$(".unclicked1").css("color", "#000000");
+		});
+		$(".unclicked2").mouseover(function() {
+			$(".unclicked2").css("background-color", "#D4BFA9");
+			$(".unclicked2").css("color", "#FFFFF5");
+		});
+		$(".unclicked2").mouseout(function() {
+			$(".unclicked2").css("background-color", "#FFFFF5");
+			$(".unclicked2").css("color", "#000000");
+		});
+		$(".1").click(function() {
+			new Messi('\"Dorothy Wordsworth (1771-1855).\" In <i>The Norton Anthology of English Literature</i>, edited by Stephen Greenblatt and M. H. Abrams, 389. 8th ed. New York: Norton, 2006.');
+		});
+		$(".2").click(function() {
+			new Messi("\"William Wordsworth (1770-1850).\" In <i>The Norton Anthology of English Literature</i>, edited by Stephen Greenblatt and M. H. Abrams, 243. 8th ed. New York: Norton, 2006.");
+		});
+		$(".6").click(function() {
+			new Messi("Levin, Susan M. \"Home.\" In <i>Dorothy Wordsworth and Romanticism</i>, 35-6. New Brunswick: Rutgers, the State University, 1987.");
+		});
+		$(".8").click(function() {
+			new Messi("Fay, Elizabeth A. \"Authoring Selves, Traversing Ground.\" In <i>Becoming Wordsworthian: A Performative Aesthetics</i>, 148-151. Amherst, Mass.: University of Massachusetts Press, 1995.");
+		});
+	});
+	</script>
+	<style>
+	body {
+		background-color: #FFFFF5;
+	}
+	p {
+		font-family: 'Oxygen';
+		font-weight: 100;
+		font-size: 14px;
+		line-height: 22px;
+	}
+	h1 {
+		font-family: 'Roboto';
+		font-weight: 300;
+		font-size: 40px;
+		text-align: left;
+		padding-left: 25px;
+		border-bottom: 1px solid #000000;
+		margin-bottom: 15px;
+	}
+	table {
+
+	}
+	td {
+		vertical-align: top;
+	}
+	a {
+		text-decoration: none;
+		font-size: 20px;
+		color: #000000;
+		text-align: center;
+		padding-top: 5%;
+		padding-bottom: 5%;
+	}
+	sup {
+		text-decoration: underline;
+		color: #8585AD;
+	}
+	.button {
+		font-family: 'Julius Sans One';
+		font-size: 20px;
+		color: #FFFFE6;
+		text-align: center;
+		background-color: #B89470;
+		border: 2px solid #B89470;
+		padding-top: 5%;
+		padding-bottom: 5%;
+	}
+	.unclicked1 {
+		font-family: 'Julius Sans One';
+		font-size: 20px;
+		color: #000000;
+		text-align: center;
+		border: 2px solid #D4BFA9;
+		background-color: #FFFFF5;
+		padding-top: 5%;
+		padding-bottom: 5%;
+	}
+	.unclicked2 {
+		font-family: 'Julius Sans One';
+		font-size: 20px;
+		color: #000000;
+		text-align: center;
+		border: 2px solid #D4BFA9;
+		background-color: #FFFFF5;
+		padding-top: 5%;
+		padding-bottom: 5%;
+	}
+	.tabs1 {
+		text-align: center;
+		width: 170px;
+		border-left: 20px solid transparent;
+		border-right: 20px solid transparent;
+	}
+	.tabs2 {
+		text-align: center;
+		width: 170px;
+		border-left: 20px solid transparent;
+		border-right: 20px solid transparent;
+	}
+	.tabspaced {
+		text-align: center;
+		width: 170px;
+		padding-left: 0px;
+		border-left: 20px solid transparent;
+		border-right: 20px solid transparent;
+	}
+	.heading {
+		/*border-style: double;
+		border-width: 5px;
+		border-color: #996633;*/
+		padding-bottom: 15px;
+	}
+	</style>
+</head>
+<body>
+	<div class="heading">
+		<h1>
+			READING THE WORDSWORTHS
+			<p style="font-size: 1px; line-height: 3px">&nbsp;&nbsp;</p>
+		</h1>
+
+		<table align="center">
+			<tr>
+				<td class="tabspaced">
+					<div class="button">Home</div>
+				</td>
+				<td></td>
+				<td class="tabs1">
+					<a href="Texts.html"><div class="unclicked1">Texts</div></a>
+				</td>
+				<td></td>
+				<td class="tabs2">
+					<a href="Sources.html"><div class="unclicked2">Sources</div></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<table align="center" style="border-top: 1px solid #000000">
+		<tr height="50px" align="center">
+			<td style="width: 450px; padding-top: 25px; padding-left: 100px">
+				<img src="DW.jpg" height="350px" width="280px">
+			</td>
+			<td style="width: 450px; padding-top: 25px">
+				<img src="ww.jpg" height="350px" width="280px">
+			</td>
+			<td style="width: 450px; padding-top: 25px; padding-right: 100px">
+				<img src="Flowers.jpg" height="350px" width="280px">
+			</td>
+		</tr>
+		<tr>
+			<td align="left">
+				<p style="font-size: 17px; padding-left: 135px; font-weight: 500">Dorothy Wordsworth (1771-1855)</p>
+				<p style="padding-left: 135px; font-weight: 300; padding-right: 35px">
+					Dorothy Wordsworth, sister of poet William Wordsworth, was the only daughter in the Wordsworth household.  Since the death of their mother, Dorothy lived in various places, eventually joining William in 1795 to live in the Lake District.  Beside taking care of the household, Dorothy also served as William's secretary, "tirelessly copying and recopying the manuscripts of his poems to ready them for publication."<sup class="1"> 1 </sup>  While Dorothy "wrote almost no word for publication,"<sup class="1"> 1 </sup> her journals were very influential in her brother's writings as well as Samuel Coleridge's.  Many of William's poems, including "I Wandered Lonely As A Cloud", echo specific passages from Dorothy's <i>Grasmere Journals</i>.
+				</p>
+			</td>
+			<td align="left">
+				<p style="font-size: 17px; padding-left: 35px; font-weight: 500">William Wordsworth (1770-1850)</p>
+				<p style="padding-left: 35px; font-weight: 300; padding-right: 35px">
+					William Wordsworth was one of four Wordsworth brothers.  He attended Cambridge University.  Upon completion of his degree, he went to France, where he fell in love with the daughter of a French Royalist.  Despite planning to marry, lack of money forced William to go back to England.  In England, he lived in the Lake District with his sister, Dorothy, who was also his "confidante, inspirer, and secretary".<sup class="2">2</sup>  William used Dorothy's journal entries as inspiration for poetry.  However, her language often "imprison, and sometimes stifle"<sup class="6">6</sup> his own language, causing difficulties in his poetry writing process.  The two siblings remained devoted to each other, even after William married Mary Hutchinson, one of Dorothy's good friends.
+				</p>
+			</td>
+			<td align="left">
+				<p style="font-size: 17px; padding-left: 35px; font-weight: 500">Introduction</p>
+				<p style="padding-left: 35px; font-weight: 300; padding-right: 140px">
+					William Wordsworth's poem "I Wandered Lonely As A Cloud" was first published in 1804, two years after Dorothy Wordsworth's corresponding journal was written (1802).  The connection between the journal entry and the poem is clear in the similarities between the two texts.  However, Dorothy and William's language also differ in many ways.  As a result, many scholarly works are devoted to intertextual reading of these two siblings.  Indeed, Elizabeth Fay claims that reading the two writers "intertextually articulates the textual dialogue itself".<sup class="8">8</sup>  In this project, we have attempted to explore how the similarities and differences between Dorothy and William's writings shed light on their respective philosophies about writing and nature.
+				</p>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
