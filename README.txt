@@ -1,3 +1,4 @@
+See the finished product at: http://goo.gl/OZxluA.
 No current plans to further develop/improve this project.
 
 Intro.html, Sources.html, and Text.html are pages of the website.
